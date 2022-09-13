@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { registerUser } from "../../slices/auth";
 
 const Register = () => {
@@ -17,7 +18,7 @@ const Register = () => {
     <div className="flex items-center justify-center min-h-screen bg-gray-100 register">
       <div className="px-8 py-6 mx-4 mt-4 text-left bg-white shadow-lg md:w-1/3 lg:w-1/3 sm:w-1/3">
         <div className="flex justify-center items-center mb-3">
-          <a href="https://flowbite.com/">
+          <Link to="/">
             <svg
               width={32}
               height={32}
@@ -29,7 +30,7 @@ const Register = () => {
                 fill="currentcolor"
               />
             </svg>
-          </a>
+          </Link>
         </div>
         <h3 className="text-2xl font-bold text-center">Đăng Ký Thành Viên</h3>
         <form onSubmit={handleSubmit(handleSubmitSignUp)}>
