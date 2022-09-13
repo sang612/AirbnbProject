@@ -1,6 +1,7 @@
 import React from "react";
 import Zoom from "react-medium-image-zoom";
 import { Link } from "react-router-dom";
+import binz from '../../assets/img/binz.png'
 
 const Reviews = () => {
   return (
@@ -111,7 +112,7 @@ const Reviews = () => {
           <div>
             <Zoom>
               <img
-                src="https://scontent.fvca1-2.fna.fbcdn.net/v/t39.30808-6/272146565_617925356363471_7427810080417473911_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=3_LSTghHwf0AX-giPnl&_nc_ht=scontent.fvca1-2.fna&oh=00_AT_eITL7tRM5SH4oB9NVC3QNMIOH4Nlb-zwdLbHYOlCfFA&oe=6311D264"
+                src={binz}
                 alt="st"
                 className="w-full h-auto"
               />

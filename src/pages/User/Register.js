@@ -85,7 +85,7 @@ const Register = () => {
                 </label>
               </label>
             </div>
-            <span className="text-xs text-red-400">Password must be same!</span>
+            {/* <span className="text-xs text-red-400">Password must be same!</span> */}
 
             <div className="mt-2">
               <label className="block" htmlFor="Name">
