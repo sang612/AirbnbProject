@@ -72,9 +72,9 @@ const Login = () => {
               </a>
               <span>
                 Chưa có tài khoản?&nbsp;
-                <a className="login-link hover:underline" href="register">
+                <Link className="login-link hover:underline" to="/register">
                  Đăng ký
-                </a>
+                </Link>
               </span>
             </div>
           </div>

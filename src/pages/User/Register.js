@@ -158,9 +158,9 @@ const Register = () => {
             </div>
             <div className="mt-6 text-grey-dark">
               Đã có tài khoản?
-              <a className="login-link hover:underline" href="login">
+              <Link className="login-link hover:underline" to="/login">
                 &nbsp;Đăng nhập
-              </a>
+              </Link>
             </div>
           </div>
         </form>
