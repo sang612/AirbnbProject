@@ -1,17 +1,25 @@
+import { isFulfilled } from "@reduxjs/toolkit";
 import React from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { registerUser } from "../../slices/auth";
 
 const Register = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, getValues } = useForm();
   const dispath = useDispatch();
 
-  const handleSubmitSignUp = (value) => {
-    // let password = getva
+  const [error, setError] = useState("");
 
-    dispath(registerUser(value));
+  const handleSubmitSignUp = (value) => {
+    if (getValues("password") === getValues("re-password")) {
+      setError("");
+      dispath(registerUser(value));
+    } else {
+      setError("Mật khẩu không trùng khớp!");
+      return;
+    }
   };
 
   return (
@@ -79,6 +87,7 @@ const Register = () => {
                 Xác nhận mật khẩu
                 <label>
                   <input
+                    {...register("re-password", { required: true })}
                     type="password"
                     placeholder="Nhập lại mật khẩu..."
                     className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
@@ -86,7 +95,7 @@ const Register = () => {
                 </label>
               </label>
             </div>
-            {/* <span className="text-xs text-red-400">Password must be same!</span> */}
+            <span className="text-xs text-red-400">{error}</span>
 
             <div className="mt-2">
               <label className="block" htmlFor="Name">
